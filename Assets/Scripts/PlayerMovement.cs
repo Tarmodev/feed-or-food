@@ -2,11 +2,9 @@
 //using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     // Start is called before the first frame update
-    //void Start()
-    //{
+    //void Start() {
     //
     //}
 
@@ -16,8 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput;
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         Vector3 horizontalMove = 
             transform.right 
@@ -29,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         horizontalInput = Input.GetAxis("Horizontal");
 
     }
