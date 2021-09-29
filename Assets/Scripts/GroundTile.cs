@@ -21,9 +21,9 @@ public class GroundTile : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        
-    }
+    //void Update() {
+    //    
+    //}
 
     void SpawnObstacle() {
         // Choose a random point to spawn the obstacle 
