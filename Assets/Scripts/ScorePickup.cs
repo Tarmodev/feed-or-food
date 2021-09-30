@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScorePickup : MonoBehaviour
 {
+    [SerializeField] float score = 100f;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name != "Player")
@@ -11,7 +13,8 @@ public class ScorePickup : MonoBehaviour
             return;
         }
 
-        GameManager.inst.update;
+        GameManager.inst.addScore(score);
+
         Destroy(gameObject);
 
     }

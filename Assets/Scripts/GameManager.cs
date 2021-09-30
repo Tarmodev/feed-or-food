@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int score;
+    public float score;
     public Text scoreText;
 
     public static GameManager inst;
@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Food: " + score;
     }
 
-    public void IncrementScore()
+    public void addScore(float increment)
     {
-        score++;
+        score += increment;
         updateScoreText();
 
     }
