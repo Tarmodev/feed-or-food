@@ -5,39 +5,46 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float score;
-    public Text scoreText;
-
     public static GameManager inst;
+
+
+    [SerializeField] Text scoreText;
+    [SerializeField] string scorePrefix = "Food: ";
+
+    private float score = 0;
+
+
 
     private void Awake()
     {
         // Create singleton.
         inst = this;
+
     }
 
-    private void updateScoreText()
+    public void updateScoreText()
     {
-        scoreText.text = "Food: " + score;
+        scoreText.text = scorePrefix + score.ToString();
+
     }
 
-    public void addScore(float increment)
+    public void addScore(float byHowMuch)
     {
-        score += increment;
+        score += byHowMuch;
         updateScoreText();
 
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
+    //// Start is called before the first frame update
+    //private void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //private void Update()
+    //{
         
-    }
+    //}
+
 }

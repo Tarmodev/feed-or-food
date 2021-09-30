@@ -8,27 +8,28 @@ public class ScorePickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name != "Player")
-        {
-            return;
-        }
+        //if (other.gameObject.name != "Player")
+        //{
+            //return;
+        //}
 
         GameManager.inst.addScore(score);
 
         Destroy(gameObject);
+        return;
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    //// Start is called before the first frame update
+    //void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
 }
