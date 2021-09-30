@@ -13,12 +13,15 @@ public class CameraFollow : MonoBehaviour {
         
     }
 
-    // Update is called once per frame
-    void Update() {
-        Vector3 targetPos = player.position + offset;
-        targetPos.x = 0;
-        transform.position = targetPos;
+    //// Update is called once per frame
+    //private void Update() {
+        
+    //}
 
+    private void LateUpdate()
+    {
+        Vector3 targetPos = player.position + offset;
+        transform.position = targetPos;
     }
 
 }
