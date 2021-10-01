@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class RestartSceneWhenLowerThan : MonoBehaviour
 {
     [SerializeField]
-    GameObject gameObject;
+    GameObject targetTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,10 @@ public class RestartSceneWhenLowerThan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(targetTransform.transform.position.y < this.transform.position.y)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
-    void onBelowThisObject(GameObject gameObject)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
