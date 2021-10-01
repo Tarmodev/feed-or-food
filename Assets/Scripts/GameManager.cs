@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     Text scoreText;
     [SerializeField]
     string scorePrefix = "Food: ";
+    [SerializeField]
+    float neededScore = 100.0f;
 
     private float score = 0;
 
@@ -24,12 +26,18 @@ public class GameManager : MonoBehaviour
         inst = this;
 
     }
+    
+    //// Start is called before the first frame update
+    //private void Start()
+    //{
 
-    public void updateScoreText()
-    {
-        scoreText.text = scorePrefix + score.ToString();
+    //}
 
-    }
+    //// Update is called once per frame
+    //private void Update()
+    //{
+
+    //}
 
     public void restartScene()
     {
@@ -43,6 +51,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void updateScoreText()
+    {
+        scoreText.text = scorePrefix + score.ToString();
+
+    }
+
     public void addScore(float byHowMuch)
     {
         score += byHowMuch;
@@ -50,16 +64,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //// Start is called before the first frame update
-    //private void Start()
-    //{
-        
-    //}
+    public void endScene()
+    {
+        if(score < neededScore)
+        {
+            Debug.Log("You lose! :(");
+        }
+        else
+        {
+            Debug.Log("You win! :)");
+        }
 
-    //// Update is called once per frame
-    //private void Update()
-    //{
-        
-    //}
+        Debug.Log("Food: " + score);
+    }
 
 }
