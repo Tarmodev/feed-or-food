@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartLevelOnCollision : MonoBehaviour
+public class RestartSceneOnCollision : MonoBehaviour
 {
+    //[SerializeField]
+    //readonly string strTag = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,11 @@ public class RestartLevelOnCollision : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameManager.inst.restartScene();
+
     }
 }
