@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class RestartSceneWhenLowerThan : MonoBehaviour
 {
@@ -19,7 +19,8 @@ public class RestartSceneWhenLowerThan : MonoBehaviour
     {
         if(targetTransform.transform.position.y < this.transform.position.y)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.inst.restartScene();            
+
         }
     }
 

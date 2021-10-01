@@ -2,14 +2,17 @@
 //using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
 
 
-    [SerializeField] Text scoreText;
-    [SerializeField] string scorePrefix = "Food: ";
+    [SerializeField]
+    Text scoreText;
+    [SerializeField]
+    string scorePrefix = "Food: ";
 
     private float score = 0;
 
@@ -25,6 +28,18 @@ public class GameManager : MonoBehaviour
     public void updateScoreText()
     {
         scoreText.text = scorePrefix + score.ToString();
+
+    }
+
+    public void restartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    public void loadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
