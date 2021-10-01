@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartSceneOnCollision : MonoBehaviour
+public class RestartSceneOnTriggerEnter : MonoBehaviour
 {
     //[SerializeField]
     //readonly string strTag = "";
@@ -19,9 +19,11 @@ public class RestartSceneOnCollision : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         GameManager.inst.restartScene();
 
     }
+    
 }
+
