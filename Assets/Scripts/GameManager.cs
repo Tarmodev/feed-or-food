@@ -1,5 +1,5 @@
-//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,17 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
-
-
-    [SerializeField]
-    Text scoreText;
-    [SerializeField]
-    string scorePrefix = "Food: ";
-    [SerializeField]
-    float neededScore = 100.0f;
+    
+    [SerializeField] private Text scoreText;
+    [SerializeField] private string scorePrefix = "Food: ";
+    [SerializeField] private float neededScore = 100.0f;
 
     private float score = 0;
 
+    private string output = "";
 
 
     private void Awake()
@@ -25,20 +22,13 @@ public class GameManager : MonoBehaviour
         inst = this;
 
     }
+
+    private void Start()
+    {
+        
+    }
     
-    //// Start is called before the first frame update
-    //private void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //private void Update()
-    //{
-
-    //}
-
-    public void RestartScene()
+    public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
@@ -67,14 +57,17 @@ public class GameManager : MonoBehaviour
     {
         if(score < neededScore)
         {
-            Debug.Log("You lose! :(");
+            output += "You lose! :(";
         }
         else
         {
-            Debug.Log("You win! :)");
+            output += "You win! :)";
         }
-
-        Debug.Log("Food: " + score);
+        
+        output += " " + scorePrefix + score.ToString();
+        
+        Debug.Log(output);
+        
     }
 
 }

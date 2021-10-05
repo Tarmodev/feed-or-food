@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ScorePickup : MonoBehaviour
 {
-    [SerializeField]
-    float score = 100f;
+    [SerializeField] private float score = 100f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,17 +19,5 @@ public class ScorePickup : MonoBehaviour
         return;
 
     }
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
 
 }

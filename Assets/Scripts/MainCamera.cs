@@ -1,23 +1,19 @@
-//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour {
-    [SerializeField]
-    Transform targetObject;
-    Vector3 offset;
-    Vector3 targetPos;
+public class MainCamera : MonoBehaviour
+{
+    [SerializeField] private Transform targetObject;
+
+    private Vector3 offset;
+    private Vector3 targetPos;
 
     // Start is called before the first frame update
-    void Start() {
+    private void Start() {
         offset = transform.position - targetObject.position;
         
     }
-
-    //// Update is called once per frame
-    //private void Update() {
-        
-    //}
 
     private void LateUpdate()
     {

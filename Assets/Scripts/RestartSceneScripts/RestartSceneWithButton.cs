@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class RestartSceneWithButton : MonoBehaviour
 {
-    [SerializeField]
-    KeyCode keyRestart;
+    [SerializeField] private KeyCode keyRestart;
 
     void Update()
     {
         if (Input.GetKey(keyRestart))
         {
-            GameManager.inst.RestartScene();
+            GameManager.inst.ReloadScene();
 
         }
     }
