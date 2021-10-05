@@ -3,12 +3,6 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
-    // Start is called before the first frame update
-    //void Start() {
-    //
-    //}
-
     // Can't the script determine its Rigidbody on its own?
     public Rigidbody rb;
     [SerializeField] float rotateSpeed = 2.0f;
@@ -39,6 +33,12 @@ public class PlayerMovement : MonoBehaviour {
         }
 
     }
+
+    //// Start is called before the first frame update
+    //void Start() {
+    //
+    //}
+
     // Update is called once per frame
     void Update() {
         horizontalInput = Input.GetAxis("Horizontal");
