@@ -3,13 +3,14 @@
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-    public Transform player;
+    [SerializeField]
+    Transform targetObject;
     Vector3 offset;
     Vector3 targetPos;
 
     // Start is called before the first frame update
     void Start() {
-        offset = transform.position - player.position;
+        offset = transform.position - targetObject.position;
         
     }
 
@@ -20,8 +21,10 @@ public class MainCamera : MonoBehaviour {
 
     private void LateUpdate()
     {
-        Vector3 targetPos = player.position + offset;
+        Vector3 targetPos = targetObject.position + offset;
         transform.position = targetPos;
+        transform.rotation = targetObject.rotation;
+
     }
 
 }
