@@ -21,7 +21,7 @@ public class RestartSceneOnTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.inst.restartScene();
+        GameManager.inst.RestartScene();
 
     }
     

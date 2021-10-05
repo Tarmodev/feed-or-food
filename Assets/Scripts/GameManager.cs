@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Create singleton.
         inst = this;
 
     }
@@ -39,32 +38,32 @@ public class GameManager : MonoBehaviour
 
     //}
 
-    public void restartScene()
+    public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    public void loadNextScene()
+    public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
-    public void updateScoreText()
+    public void UpdateScoreText()
     {
         scoreText.text = scorePrefix + score.ToString();
 
     }
 
-    public void addScore(float byHowMuch)
+    public void AddScore(float byHowMuch)
     {
         score += byHowMuch;
-        updateScoreText();
+        UpdateScoreText();
 
     }
 
-    public void endScene()
+    public void EndScene()
     {
         if(score < neededScore)
         {

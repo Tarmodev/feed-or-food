@@ -11,7 +11,7 @@ public class RestartSceneWithButton : MonoBehaviour
     {
         if (Input.GetKey(keyRestart))
         {
-            GameManager.inst.restartScene();
+            GameManager.inst.RestartScene();
 
         }
     }

@@ -18,7 +18,7 @@ public class EndSceneOnTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.inst.endScene();
+        GameManager.inst.EndScene();
 
     }
 

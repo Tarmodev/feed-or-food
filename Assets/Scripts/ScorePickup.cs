@@ -14,7 +14,7 @@ public class ScorePickup : MonoBehaviour
             //return;
         //}
 
-        GameManager.inst.addScore(score);
+        GameManager.inst.AddScore(score);
 
         Destroy(gameObject);
         return;
