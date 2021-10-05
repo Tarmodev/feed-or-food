@@ -25,10 +25,10 @@ public class PlayerMovement : MonoBehaviour {
         //    * Time.fixedDeltaTime
         //    * horizontalMultiplier;
         //rb.MovePosition(rb.position + forwardMove + horizontalMove);
-        transform.Rotate(Vector3.forward * horizontalInput * rotateSpeed);
+        transform.Rotate(Vector3.up * horizontalInput * rotateSpeed);
         if(rb.velocity.magnitude < maxSpeed)
         {
-            rb.AddForce(-1 * (transform.up) * moveSpeed);
+            rb.AddForce( (transform.forward) * moveSpeed);
 
         }
 

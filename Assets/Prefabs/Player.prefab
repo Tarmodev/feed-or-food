@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4537140806352914706
+--- !u!1 &3818000330182727034
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7316074664331536337}
-  - component: {fileID: 1876812440639097970}
-  - component: {fileID: 5212850455955680490}
-  - component: {fileID: 3026572725096084149}
-  - component: {fileID: 1935074620132932466}
-  - component: {fileID: 5760934390218154986}
+  - component: {fileID: 7306183224968743824}
+  - component: {fileID: 4692192354990703907}
+  - component: {fileID: 19760467546785313}
+  - component: {fileID: 7406199875395352984}
   m_Layer: 0
-  m_Name: Body
+  m_Name: CarBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7316074664331536337
+--- !u!4 &7306183224968743824
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537140806352914706}
+  m_GameObject: {fileID: 3818000330182727034}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7760115745234516109}
-  - {fileID: 214455096605602049}
-  - {fileID: 3612584649199978632}
-  m_Father: {fileID: 2688658358900795808}
+  m_Children: []
+  m_Father: {fileID: 7316074664331536337}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!33 &1876812440639097970
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4692192354990703907
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537140806352914706}
+  m_GameObject: {fileID: 3818000330182727034}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5212850455955680490
+--- !u!23 &19760467546785313
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537140806352914706}
+  m_GameObject: {fileID: 3818000330182727034}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,13 +82,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3026572725096084149
+--- !u!136 &7406199875395352984
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537140806352914706}
+  m_GameObject: {fileID: 3818000330182727034}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -101,6 +96,42 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &4537140806352914706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7316074664331536337}
+  - component: {fileID: 1935074620132932466}
+  - component: {fileID: 5760934390218154986}
+  m_Layer: 0
+  m_Name: Car
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7316074664331536337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537140806352914706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7306183224968743824}
+  - {fileID: 7760115745234516109}
+  - {fileID: 214455096605602049}
+  - {fileID: 3612584649199978632}
+  m_Father: {fileID: 2688658358900795808}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1935074620132932466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -159,12 +190,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4810101084767835135}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 0, y: -0.801, z: -0.339}
-  m_LocalScale: {x: 0.36256996, y: 0.5739817, z: 0.35926998}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.3389999, z: 0.8010001}
+  m_LocalScale: {x: 0.3625699, y: 0.57398164, z: 0.35927}
   m_Children: []
   m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!33 &1139582078726988018
 MeshFilter:
@@ -286,12 +317,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5888478750035099440}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 0, y: 0.7400001, z: -0.30599973}
-  m_LocalScale: {x: 0.46626884, y: 0.5739817, z: 0.49247235}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.30599988, z: -0.7400001}
+  m_LocalScale: {x: 0.46626884, y: 0.57398164, z: 0.4924724}
   m_Children: []
   m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!33 &4357849785588135754
 MeshFilter:
@@ -379,10 +410,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9011535657479223574}
-  m_LocalRotation: {x: -0.8280848, y: -0, z: -0, w: -0.56060284}
-  m_LocalPosition: {x: 0, y: 6.26, z: 6.210002}
+  m_LocalRotation: {x: 0.18913832, y: -0, z: -0, w: 0.9819505}
+  m_LocalPosition: {x: 0, y: 6.210002, z: -6.260002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 21.805, y: 0, z: 0}
