@@ -193,10 +193,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec08750fdd24c641b3720e0891a295e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMoveSpeed: 5
+  horizontalMoveSpeed: 50.3
   maxSpeed: 15
   rotateSpeed: 4
-  checkPos: {fileID: 5006003919299527333}
+  jumpCheckPos: {fileID: 5006003919299527333}
+  jumpForce: 6.93
+  jumpTime: 1.32
+  checkRadius: 0.27
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &5424831602823515027
 MonoBehaviour:
   m_ObjectHideFlags: 0
