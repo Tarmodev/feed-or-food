@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259031123248713541
 GameObject:
@@ -60,7 +60,7 @@ Transform:
   - {fileID: 471965111892626379}
   - {fileID: 2964732480565060299}
   m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2844358509156036807
 GameObject:
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2844358509156036807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.48683, y: 4.566583, z: -3.3706765}
+  m_LocalPosition: {x: 74.48683, y: 4.680583, z: -3.3706765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2880564160315192574}
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134148122411417523}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.592, y: -0.394, z: -0.69}
+  m_LocalPosition: {x: -0.592, y: -0.28000015, z: -0.69}
   m_LocalScale: {x: 0.5, y: 0.07620821, z: 0.5}
   m_Children: []
   m_Father: {fileID: 471965111892626379}
@@ -183,7 +183,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134148122411417523}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 5760934390218154986}
   - component: {fileID: 5424831602823515027}
   - component: {fileID: 6214046485892026367}
+  - component: {fileID: 6019793631955335790}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -320,7 +321,6 @@ Transform:
   - {fileID: 7306183224968743824}
   - {fileID: 7760115745234516109}
   - {fileID: 214455096605602049}
-  - {fileID: 3612584649199978632}
   - {fileID: 5006003919299527333}
   - {fileID: 3648434911782312527}
   m_Father: {fileID: 2688658358900795808}
@@ -358,8 +358,9 @@ MonoBehaviour:
   horizontalMoveSpeed: 83.3
   rotateSpeed: 4
   jumpForce: 2.86
+  jumpForwardForce: 2
   jumpCheckPos: {fileID: 5006003919299527333}
-  jumpCheckRadius: 0.27
+  jumpCheckRadius: 0.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -388,6 +389,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedbe256e8103384a9cbb5e1e0447ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6019793631955335790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537140806352914706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcd7249ff5a74142bc59e9422f1ae63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyRestart: 114
 --- !u!1 &4810101084767835135
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +507,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2688658358900795808}
-  - component: {fileID: 7642099399982827803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -516,19 +529,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7642099399982827803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5174125746202187589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbcd7249ff5a74142bc59e9422f1ae63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyRestart: 114
 --- !u!1 &5737115037841915199
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8431392597988880127}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.582, y: -0.394, z: -0.69}
+  m_LocalPosition: {x: 0.582, y: -0.28, z: -0.69}
   m_LocalScale: {x: 0.5, y: 0.07620821, z: 0.5}
   m_Children: []
   m_Father: {fileID: 471965111892626379}
@@ -746,7 +746,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8431392597988880127}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -842,43 +842,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442795706343251850}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &9011535657479223574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3612584649199978632}
-  m_Layer: 0
-  m_Name: CameraRig
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3612584649199978632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9011535657479223574}
-  m_LocalRotation: {x: 0.18913832, y: -0, z: -0, w: 0.9819505}
-  m_LocalPosition: {x: 0, y: 6.210002, z: -6.260002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7316074664331536337}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 21.805, y: 0, z: 0}
 --- !u!1 &9114856427553534181
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +938,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114856427553534181}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001

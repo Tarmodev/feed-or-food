@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float horizontalMoveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 2.0f;
     [SerializeField] private float jumpForce = 2.0f;
+    [SerializeField] float jumpForwardForce = 2.0f;
 
     private Rigidbody rb;
 
@@ -20,45 +21,44 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform jumpCheckPos;
     [SerializeField] private float jumpCheckRadius;
     [SerializeField] private LayerMask whatIsGround;
-    private bool isJumping = false;
     [SerializeField] private float jumpTime = 1.0f;
-    private float jumpTimeTimer;
+    private float jumpTimeTimer = 0f;
+    private bool isGrounded = false;
+    private bool isJumping = false;
 
 
-
-    private void UpdateInput()
-    {
-        horizontalMoveInput = Input.GetAxis(horizontalAxis);
-        jumpInputIsPressed = Input.GetKey(jumpButton);
-
-    }
 
     private void MovePlayer()
     {
-        transform.Rotate(Vector3.up * horizontalMoveInput * rotateSpeed);
+        if(isGrounded)
+        {
+            transform.Rotate(Vector3.up * Input.GetAxis(horizontalAxis) * rotateSpeed);
+
+        }
         if(rb.velocity.magnitude < maxSpeed)
         {
-            rb.AddForce((transform.forward) * horizontalMoveSpeed);
+            rb.AddForce(transform.forward * Input.GetAxis(horizontalAxis));
 
         }
     
     }
 
-    private bool CheckIfIsGrounded()
+    private void UpdateIsGrounded()
     {
-        bool output = Physics.CheckSphere(jumpCheckPos.position, jumpCheckRadius, whatIsGround);
-        return output;
+        isGrounded = Physics.CheckSphere(jumpCheckPos.position, jumpCheckRadius, whatIsGround);
+        return;
 
     }
     
     private void Jump()
     {
         Vector3 jumpVelocity;
-        jumpVelocity = transform.forward * 50.0f;
+        jumpVelocity = transform.forward * jumpForwardForce;
 
         rb.velocity = jumpVelocity;
 
         rb.velocity += transform.up * jumpForce;
+
     }
 
     private void Start()
@@ -66,37 +66,52 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
     }
-
     private void Update() {
-        UpdateInput();
-
-    }
-
-    private void FixedUpdate() {
-
-        bool isGrounded = CheckIfIsGrounded();
-        if(isGrounded && jumpInputIsPressed)
-        {
-            Jump();
-
-        }
-
-        if(jumpInputIsPressed)
-        {
-            if(jumpTimeTimer < 0)
-            {
-                rb.velocity = Vector3.up * jumpForce;
-                jumpTime -= Time.fixedDeltaTime;
-
-            }
-            else
-            {
-                isJumping = false;
-
-            }
-
-        }
         
+    }
+    private void FixedUpdate() {
+        UpdateIsGrounded();
+
+        if(isGrounded)
+        {
+            rb.drag = 2f;
+
+        }
+        else {
+            rb.drag = 0f;
+
+        }
+
+        if(Input.GetKeyDown(jumpButton))
+        {
+            if(isGrounded)
+            {
+                isJumping = true;
+                jumpTimeTimer = jumpTime;
+                Jump();
+
+            }
+
+        }
+        if(Input.GetKey(jumpButton))
+        {
+            if (isJumping)
+            {
+                if (jumpTimeTimer < 0)
+                {
+                    rb.velocity = transform.up * jumpForce;
+                    jumpTimeTimer -= Time.fixedDeltaTime;
+
+                }
+                else
+                {
+                    isJumping = false;
+
+                }
+
+            }
+
+        }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
