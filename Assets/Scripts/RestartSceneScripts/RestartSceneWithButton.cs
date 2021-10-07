@@ -8,7 +8,7 @@ public class RestartSceneWithButton : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(keyRestart))
+        if (Input.GetKeyDown(keyRestart))
         {
             GameManager.inst.ReloadScene();
 
