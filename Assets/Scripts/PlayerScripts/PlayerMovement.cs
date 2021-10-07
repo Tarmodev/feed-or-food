@@ -30,14 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if(isGrounded)
-        {
-            transform.Rotate(Vector3.up * Input.GetAxis(horizontalAxis) * rotateSpeed);
+        transform.Rotate(Vector3.up * Input.GetAxis(horizontalAxis) * rotateSpeed);
 
-        }
-        if(rb.velocity.magnitude < maxSpeed)
+        // if not going at maxSpeed, move forward.
+        if (rb.velocity.magnitude < maxSpeed)
         {
-            rb.AddForce(transform.forward * Input.GetAxis(horizontalAxis));
+            rb.AddForce(transform.forward * horizontalMoveSpeed);
 
         }
     
@@ -97,9 +95,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isJumping)
             {
-                if (jumpTimeTimer < 0)
+                if (jumpTimeTimer > 0)
                 {
-                    rb.velocity = transform.up * jumpForce;
+                    rb.velocity += transform.up * jumpForce;
                     jumpTimeTimer -= Time.fixedDeltaTime;
 
                 }
@@ -112,7 +110,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        Debug.Log(jumpTimeTimer);
+        if (Input.GetKeyUp(jumpButton))
         {
             isJumping = false;
 
