@@ -5,29 +5,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float horizontalMoveSpeed = 5.0f;
     [SerializeField] private float maxSpeed = 20.0f;
+    [SerializeField] private float horizontalMoveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 2.0f;
-    [SerializeField] private Transform jumpCheckPos;
     [SerializeField] private float jumpForce = 2.0f;
-    [SerializeField] private float jumpTime = 1.0f;
 
     private Rigidbody rb;
 
+    private string horizontalAxis = "Horizontal";
     private float horizontalMoveInput;
-    private bool jumpInput;
 
     private KeyCode jumpButton = KeyCode.Space;
-    private string horizontalAxis = "Horizontal";
-
-    [SerializeField] private float checkRadius;
-
+    private bool jumpInput;
+    [SerializeField] private Transform jumpCheckPos;
+    [SerializeField] private float jumpCheckRadius;
+    [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
-    public LayerMask whatIsGround;
-
+    private bool isJumping = false;
+    [SerializeField] private float jumpTime = 1.0f;
     private float jumpTimeCounter;
 
-    private bool isJumping = false;
 
 
     private void UpdateInput()
@@ -39,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        //Debug.Log("MovePlayer()");
         transform.Rotate(Vector3.up * horizontalMoveInput * rotateSpeed);
         if(rb.velocity.magnitude < maxSpeed)
         {
@@ -51,14 +47,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool CheckIfIsGrounded()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(jumpCheckPos.position, checkRadius, whatIsGround);
-        return hitColliders != null;
+        bool output = Physics.CheckSphere(jumpCheckPos.position, jumpCheckRadius, whatIsGround);
+        return output;
 
     }
-
+    
     private void Jump()
     {
-        rb.velocity = Vector3.up * jumpForce;
+        rb.velocity += Vector3.up * jumpForce;
 
     }
 
@@ -79,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
         if(isGrounded && jumpInput)
         {
             Jump();
-            Debug.Log("Jumped();");
 
         }
 
@@ -89,12 +84,13 @@ public class PlayerMovement : MonoBehaviour
             if(jumpTimeCounter < 0.0f)
             {
                 rb.velocity = Vector3.up * jumpForce;
-                jumpTime -= Time.deltaTime;
+                jumpTime -= Time.fixedDeltaTime;
 
             }
             else
             {
                 isJumping = false;
+
             }
 
         }
@@ -102,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+
         }
     }
 
