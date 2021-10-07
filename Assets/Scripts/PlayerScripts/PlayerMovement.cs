@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed = 20.0f;
+    [SerializeField] private float maxSpeed = 12.0f;
     [SerializeField] private float horizontalMoveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 2.0f;
     [SerializeField] private float jumpForce = 2.0f;
@@ -16,21 +16,20 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMoveInput;
 
     private KeyCode jumpButton = KeyCode.Space;
-    private bool jumpInput;
+    private bool jumpInputIsPressed;
     [SerializeField] private Transform jumpCheckPos;
     [SerializeField] private float jumpCheckRadius;
     [SerializeField] private LayerMask whatIsGround;
-    private bool isGrounded;
     private bool isJumping = false;
     [SerializeField] private float jumpTime = 1.0f;
-    private float jumpTimeCounter;
+    private float jumpTimeTimer;
 
 
 
     private void UpdateInput()
     {
         horizontalMoveInput = Input.GetAxis(horizontalAxis);
-        jumpInput = Input.GetKey(jumpButton);
+        jumpInputIsPressed = Input.GetKey(jumpButton);
 
     }
 
@@ -54,8 +53,12 @@ public class PlayerMovement : MonoBehaviour
     
     private void Jump()
     {
-        rb.velocity += Vector3.up * jumpForce;
+        Vector3 jumpVelocity;
+        jumpVelocity = transform.forward * 50.0f;
 
+        rb.velocity = jumpVelocity;
+
+        rb.velocity += transform.up * jumpForce;
     }
 
     private void Start()
@@ -71,17 +74,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() {
 
-        isGrounded = CheckIfIsGrounded();
-        if(isGrounded && jumpInput)
+        bool isGrounded = CheckIfIsGrounded();
+        if(isGrounded && jumpInputIsPressed)
         {
             Jump();
 
         }
 
-        MovePlayer();
-        if(jumpInput)
+        if(jumpInputIsPressed)
         {
-            if(jumpTimeCounter < 0.0f)
+            if(jumpTimeTimer < 0)
             {
                 rb.velocity = Vector3.up * jumpForce;
                 jumpTime -= Time.fixedDeltaTime;
@@ -100,6 +102,9 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
 
         }
+
+        MovePlayer();
+
     }
 
 }
