@@ -185,7 +185,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 3134148122411417523}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -361,7 +361,7 @@ MonoBehaviour:
   jumpForwardForce: 3
   jumpFloatForce: 0.8
   jumpCheckPos: {fileID: 5006003919299527333}
-  jumpCheckRadius: 0.2
+  jumpCheckRadius: 0.32
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -749,7 +749,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8431392597988880127}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -845,7 +845,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8442795706343251850}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -941,7 +941,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 9114856427553534181}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
