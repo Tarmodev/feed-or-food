@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
     
     [SerializeField] private Text scoreText;
-    [SerializeField] private string scorePrefix = "Food: ";
-    [SerializeField] private float neededScore = 100.0f;
+    [SerializeField] public string scorePrefix = "Food: ";
+    [SerializeField] public float neededScore = 100.0f;
 
-    private float score = 0;
+    public float score = 0;
 
-    private string output = "";
 
 
     private void Awake()
@@ -51,23 +50,6 @@ public class GameManager : MonoBehaviour
         score += byHowMuch;
         UpdateScoreText();
 
-    }
-
-    public void EndScene()
-    {
-        if(score < neededScore)
-        {
-            output += "You lose! :(";
-        }
-        else
-        {
-            output += "You win! :)";
-        }
-        
-        output += " " + scorePrefix + score.ToString();
-        
-        Debug.Log(output);
-        
     }
 
 }

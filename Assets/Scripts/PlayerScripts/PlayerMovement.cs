@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = jumpVelocity;
 
         rb.velocity += transform.up * jumpForce;
-        Debug.Log("Jumped!");
 
     }
 
@@ -68,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update() 
     {
-        //Debug.Log("isJumping == " + isJumping);
         if (Input.GetKeyDown(jumpButton))
         {
             if (isGrounded)
@@ -98,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
 
 			}
 		}
-		Debug.Log("jumpTimeTimer == " + jumpTimeTimer);
 
 		if (Input.GetKeyUp(jumpButton))
         {
@@ -106,14 +103,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(isJumping)
-		{
-            Debug.Log("isJumping with timer: "+jumpTimeTimer);
-        }
     }
     private void FixedUpdate() {
         UpdateIsGrounded();
-        Debug.Log("isGrounder == "+isGrounded);
 
         if(isGrounded)
         {
@@ -128,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if(isJumping)
 		{
             rb.velocity += transform.up * jumpFloatForce;
+
         }
 
 
