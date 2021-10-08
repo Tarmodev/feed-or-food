@@ -40,14 +40,12 @@ public class PlayerMovement : MonoBehaviour
         }
     
     }
-
     private void UpdateIsGrounded()
     {
         isGrounded = Physics.CheckSphere(jumpCheckPos.position, jumpCheckRadius, whatIsGround);
         return;
 
     }
-    
     private void Jump()
     {
         Vector3 jumpVelocity;
@@ -56,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = jumpVelocity;
 
         rb.velocity += transform.up * jumpForce;
+
+    }
+    private void KeepJumping()
+    {
+        rb.velocity += transform.up * jumpForce;
+        jumpTimeTimer -= Time.fixedDeltaTime;
 
     }
 
@@ -97,8 +101,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (jumpTimeTimer > 0)
                 {
-                    rb.velocity += transform.up * jumpForce;
-                    jumpTimeTimer -= Time.fixedDeltaTime;
+                    KeepJumping();
 
                 }
                 else
