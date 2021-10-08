@@ -357,14 +357,15 @@ MonoBehaviour:
   maxSpeed: 15
   horizontalMoveSpeed: 83.3
   rotateSpeed: 4
-  jumpForce: 2.86
-  jumpForwardForce: 2
+  jumpForce: 2
+  jumpForwardForce: 3
+  jumpFloatForce: 0.8
   jumpCheckPos: {fileID: 5006003919299527333}
   jumpCheckRadius: 0.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  jumpTime: 1
+  jumpTime: 0.2
 --- !u!114 &5424831602823515027
 MonoBehaviour:
   m_ObjectHideFlags: 0

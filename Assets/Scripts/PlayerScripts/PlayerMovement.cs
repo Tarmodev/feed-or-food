@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSpeed = 12.0f;
     [SerializeField] private float horizontalMoveSpeed = 5.0f;
     [SerializeField] private float rotateSpeed = 2.0f;
-    [SerializeField] private float jumpForce = 2.0f;
-    [SerializeField] float jumpForwardForce = 2.0f;
+    [SerializeField] private float jumpForce;
+    [SerializeField] float jumpForwardForce;
+    [SerializeField] float jumpFloatForce;
 
     private Rigidbody rb;
 
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = jumpVelocity;
 
         rb.velocity += transform.up * jumpForce;
+        Debug.Log("Jumped!");
 
     }
 
@@ -64,11 +66,54 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
     }
-    private void Update() {
-        
+    private void Update() 
+    {
+        //Debug.Log("isJumping == " + isJumping);
+        if (Input.GetKeyDown(jumpButton))
+        {
+            if (isGrounded)
+            {
+                isJumping = true;
+                jumpTimeTimer = jumpTime;
+                Jump();
+
+            }
+
+        }
+		if (Input.GetKey(jumpButton))
+		{
+			if (isJumping)
+			{
+				if (jumpTimeTimer > 0)
+				{
+					
+					jumpTimeTimer -= Time.deltaTime;
+
+				}
+				else
+				{
+					isJumping = false;
+
+				}
+
+			}
+		}
+		Debug.Log("jumpTimeTimer == " + jumpTimeTimer);
+
+		if (Input.GetKeyUp(jumpButton))
+        {
+            isJumping = false;
+
+        }
+
+        if(isJumping)
+		{
+            Debug.Log("isJumping with timer: "+jumpTimeTimer);
+        }
     }
     private void FixedUpdate() {
         UpdateIsGrounded();
+        Debug.Log("isGrounder == "+isGrounded);
 
         if(isGrounded)
         {
@@ -80,42 +125,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(jumpButton))
-        {
-            if(isGrounded)
-            {
-                isJumping = true;
-                jumpTimeTimer = jumpTime;
-                Jump();
-
-            }
-
+        if(isJumping)
+		{
+            rb.velocity += transform.up * jumpFloatForce;
         }
-        if(Input.GetKey(jumpButton))
-        {
-            if (isJumping)
-            {
-                if (jumpTimeTimer > 0)
-                {
-                    rb.velocity += transform.up * jumpForce;
-                    jumpTimeTimer -= Time.fixedDeltaTime;
 
-                }
-                else
-                {
-                    isJumping = false;
-
-                }
-
-            }
-
-        }
-        Debug.Log(jumpTimeTimer);
-        if (Input.GetKeyUp(jumpButton))
-        {
-            isJumping = false;
-
-        }
 
         MovePlayer();
 
