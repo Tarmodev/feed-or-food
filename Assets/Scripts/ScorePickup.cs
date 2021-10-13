@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScorePickup : MonoBehaviour
 {
     [SerializeField] private float score = 100f;
+    [SerializeField] Transform pickupEffect;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class ScorePickup : MonoBehaviour
         //}
 
         GameManager.inst.AddScore(score);
+        Instantiate(pickupEffect,transform.position, Quaternion.identity);
 
         Destroy(gameObject);
         return;
