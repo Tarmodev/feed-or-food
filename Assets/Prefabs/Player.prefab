@@ -185,7 +185,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 3134148122411417523}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -355,8 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec08750fdd24c641b3720e0891a295e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 20.5
-  horizontalMoveSpeed: 99.4
+  maxSpeed: 20
+  horizontalMoveSpeed: 100
   rotateSpeed: 4
   jumpForce: 6
   jumpForwardForce: 3
@@ -763,7 +763,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8431392597988880127}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -859,7 +859,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 8442795706343251850}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -955,7 +955,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 9114856427553534181}
   m_Material: {fileID: 13400000, guid: 1a827bbaac83c1a4e8fb36a756682eea, type: 2}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1

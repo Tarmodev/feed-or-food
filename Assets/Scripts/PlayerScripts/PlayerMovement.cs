@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 jumpVelocity;
         jumpVelocity = transform.forward * jumpForwardForce;
 
-        rb.velocity = jumpVelocity;
+        rb.velocity += jumpVelocity;
 
         rb.velocity += transform.up * jumpForce;
 
