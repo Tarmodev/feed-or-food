@@ -16,24 +16,13 @@ public class GameManager : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        inst = this;
-
-    }
-
-    private void Start()
-    {
-        
-    }
-    
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    public void LoadNextScene()
+    public void LoadNextSceneInQueue()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
@@ -50,6 +39,26 @@ public class GameManager : MonoBehaviour
         score += byHowMuch;
         UpdateScoreText();
 
+    }
+
+    public void RanOutOfTime()
+    {
+        // your code here :)
+    }
+
+    public void FellOutOfBounds()
+    {
+
+    }
+
+    private void Awake()
+    {
+        inst = this;
+
+    }
+    private void Start()
+    {
+        
     }
 
 }
