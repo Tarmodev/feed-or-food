@@ -8,10 +8,10 @@ public class PauseMenu : MonoBehaviour
     private KeyCode pauseKey = KeyCode.Escape;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    [SerializeField] private string sceneToLoadWhenQuit;
 
 
-
-    public void Continue()
+    public void UnpauseGame()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    public void Pause()
+    public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -27,16 +27,12 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    public void QuitGame()
-    {
-        print("quitting game...");
-        Application.Quit();
 
-    }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu");
+        UnpauseGame();
+        SceneManager.LoadScene(sceneToLoadWhenQuit);
 
     }
     
@@ -47,12 +43,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (gameIsPaused)
             {
-                Continue();
+                UnpauseGame();
 
             }
             else
             {
-                Pause();
+                PauseGame();
 
             }
 

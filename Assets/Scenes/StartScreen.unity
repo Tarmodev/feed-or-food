@@ -1125,3 +1125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc23856a0abe1ce45a9f1fb5d5f28cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoadWhenStartIsPressed: Level1
