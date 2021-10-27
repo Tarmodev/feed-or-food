@@ -9,32 +9,20 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
     
     [SerializeField] private Text scoreText;
-    [SerializeField] private string scorePrefix = "Food: ";
-    [SerializeField] private float neededScore = 100.0f;
+    [SerializeField] public string scorePrefix = "Food: ";
+    [SerializeField] public float neededScore = 100.0f;
 
-    private float score = 0;
-
-    private string output = "";
+    public float score = 0;
 
 
-    private void Awake()
-    {
-        inst = this;
 
-    }
-
-    private void Start()
-    {
-        
-    }
-    
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    public void LoadNextScene()
+    public void LoadNextSceneInQueue()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
@@ -53,20 +41,23 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void EndScene()
+    public void RanOutOfTime()
     {
-        if(score < neededScore)
-        {
-            output += "You lose! :(";
-        }
-        else
-        {
-            output += "You win! :)";
-        }
-        
-        output += " " + scorePrefix + score.ToString();
-        
-        Debug.Log(output);
+        // your code here :)
+    }
+
+    public void FellOutOfBounds()
+    {
+
+    }
+
+    private void Awake()
+    {
+        inst = this;
+
+    }
+    private void Start()
+    {
         
     }
 

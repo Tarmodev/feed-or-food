@@ -140,3 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
+  pickupEffect: {fileID: 8955819778347150721, guid: af4e7b96c0ec6614f87a73bfad4f4964, type: 3}
