@@ -700,11 +700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607757027941828372, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000042805564
+      value: -0.0000000042805564
       objectReference: {fileID: 0}
     - target: {fileID: 607757027941828372, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.2492093e-10
+      value: 4.2492093e-10
       objectReference: {fileID: 0}
     - target: {fileID: 607757028185274077, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: winScreenUI
@@ -748,11 +748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607757028849172737, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000042805564
+      value: -0.0000000042805564
       objectReference: {fileID: 0}
     - target: {fileID: 607757028849172737, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.2492093e-10
+      value: 4.2492093e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1295577842550794320, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3887,10 +3887,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1034333055859973553, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1615569380925032153, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
