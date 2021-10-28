@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10190265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6713970201186460948, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+  m_PrefabInstance: {fileID: 1684192827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &12589055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4143526320991766788, guid: e2c5fd0b62be84b418e4d1565be9c1df, type: 3}
@@ -700,11 +705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607757027941828372, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042805564
+      value: 0.0000000042805564
       objectReference: {fileID: 0}
     - target: {fileID: 607757027941828372, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.2492093e-10
+      value: -4.2492093e-10
       objectReference: {fileID: 0}
     - target: {fileID: 607757028185274077, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: winScreenUI
@@ -714,6 +719,10 @@ PrefabInstance:
       propertyPath: loseScreenUI
       value: 
       objectReference: {fileID: 327213463}
+    - target: {fileID: 607757028185274077, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
+      propertyPath: timeOutScreenUI
+      value: 
+      objectReference: {fileID: 10190265}
     - target: {fileID: 607757028185274077, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: gameObjectWithTimerScript
       value: 
@@ -748,11 +757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607757028849172737, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042805564
+      value: 0.0000000042805564
       objectReference: {fileID: 0}
     - target: {fileID: 607757028849172737, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.2492093e-10
+      value: -4.2492093e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1295577842550794320, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3887,6 +3896,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 359023843905579521, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 979712710}
+    - target: {fileID: 359023843905579521, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRestartButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 359023843905579521, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1615569380925032153, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3984,6 +4005,18 @@ PrefabInstance:
       value: OnRestartButtonPressed
       objectReference: {fileID: 0}
     - target: {fileID: 6602743786157056283, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750646523310930514, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 979712710}
+    - target: {fileID: 6750646523310930514, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuitButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750646523310930514, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -4322,7 +4355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 351179520}
-  remainingTimeInSeconds: 69
+  remainingTimeInSeconds: 30
   timerIsRunning: 1
 --- !u!4 &2047620658 stripped
 Transform:

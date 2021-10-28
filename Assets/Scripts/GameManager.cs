@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject winScreenUI;
     [SerializeField] private GameObject loseScreenUI;
+    [SerializeField] private GameObject timeOutScreenUI;
 
 
 
     [SerializeField] private GameObject gameObjectWithPlayerScript;
     [SerializeField] private GameObject gameObjectWithTimerScript;
+
 
     private Player playerScript;
     private Timer timerScript;
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
         playerScript.SetControl(false);
         timerScript.SetTimerIsRunning(false);
 
+
         if (inst.score < inst.neededScore)
         {
             loseScreenUI.SetActive(true);
@@ -97,7 +100,12 @@ public class GameManager : MonoBehaviour
 
     public void RanOutOfTime()
     {
-        // your code here :)
+        timeOutScreenUI.SetActive(true);
+        playerScript.SetControl(false);
+        
+        // Causes a bug:
+        //Time.timeScale = 0.0f;
+
     }
 
     public void FellOutOfBounds()
