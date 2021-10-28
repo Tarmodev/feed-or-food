@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EndScene : MonoBehaviour
 {
+    [SerializeField] private GameObject winScreenUI;
+    [SerializeField] private GameObject loseScreenUI;
+
+
+
     void Start()
     {
         
@@ -17,20 +22,19 @@ public class EndScene : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log(other);
-            string message;
+
 
             if (GameManager.inst.score < GameManager.inst.neededScore)
             {
-                message = "You lose! :( ";
+                loseScreenUI.SetActive(true);
+
             }
             else
             {
-                message = "You win! :) ";
-            }
-            message += GameManager.inst.scorePrefix + GameManager.inst.score.ToString();
+                winScreenUI.SetActive(true);
 
-            Debug.Log(message);
+            }
+
 
         }
 

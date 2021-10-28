@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
-    
-    [SerializeField] private Text scoreText;
+
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] public string scorePrefix = "Food: ";
     [SerializeField] public float neededScore = 100.0f;
 
@@ -28,9 +29,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void OnNextLevelButtonPressed()
+    {
+        print("OnNextLevelButtonPressed()");
+        LoadNextSceneInQueue();
+
+    }
+
     public void UpdateScoreText()
     {
-        scoreText.text = scorePrefix + score.ToString();
+        scoreText.text = score.ToString() + "/" + neededScore.ToString("f0");
 
     }
 
