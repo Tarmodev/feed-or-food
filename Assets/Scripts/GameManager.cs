@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
@@ -22,17 +24,31 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
-
     public void LoadNextSceneInQueue()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
+    public void QuitToStartScreen()
+    {
+        SceneManager.LoadScene("StartScreen");
+
+    }
 
     public void OnNextLevelButtonPressed()
     {
-        print("OnNextLevelButtonPressed()");
+        //print(this + "helo");
         LoadNextSceneInQueue();
+
+    }
+    public void OnRestartButtonPressed()
+    {
+        ReloadScene();
+
+    }
+    public void OnQuitButtonPressed()
+    {
+        QuitToStartScreen();
 
     }
 

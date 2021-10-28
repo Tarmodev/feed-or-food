@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private Text timerText;
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float remainingTimeInSeconds = 4.0f;
     [SerializeField] private bool timerIsRunning = true;
 
