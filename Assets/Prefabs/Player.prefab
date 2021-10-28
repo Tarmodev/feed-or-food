@@ -2017,6 +2017,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2688658358900795808, guid: 2adadc44f61bc184a888ab98c98869cd, type: 3}
   m_PrefabInstance: {fileID: 3795084946099519984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747017137505798370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4537140806352914706, guid: 2adadc44f61bc184a888ab98c98869cd, type: 3}
+  m_PrefabInstance: {fileID: 3795084946099519984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5849387032014923297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7316074664331536337, guid: 2adadc44f61bc184a888ab98c98869cd, type: 3}
@@ -2077,6 +2082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3694292493842046203, guid: 12606858a51a5b34ab180a9f3690bcdb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 747017137505798370}
     - target: {fileID: 3694292493842046203, guid: 12606858a51a5b34ab180a9f3690bcdb, type: 3}
       propertyPath: scoreText
       value: 

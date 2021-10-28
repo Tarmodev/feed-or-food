@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 
 
@@ -11,7 +11,19 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float remainingTimeInSeconds = 4.0f;
+
     [SerializeField] private bool timerIsRunning = true;
+    public void SetTimerIsRunning(bool setTo)
+    {
+        timerIsRunning = setTo;
+        return;
+
+    }
+    public bool GetTimerIsRunning()
+    {
+        return timerIsRunning;
+
+    }
 
 
 
@@ -28,6 +40,7 @@ public class Timer : MonoBehaviour
 
     }
     
+
     private void Update()
     {
         if(timerIsRunning)

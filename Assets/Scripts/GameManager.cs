@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 
 
@@ -14,6 +14,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] public string scorePrefix = "Food: ";
     [SerializeField] public float neededScore = 100.0f;
+
+    [SerializeField] private GameObject winScreenUI;
+    [SerializeField] private GameObject loseScreenUI;
+
+
+
+    [SerializeField] private GameObject gameObjectWithPlayerScript;
+    [SerializeField] private GameObject gameObjectWithTimerScript;
+
+    private Player playerScript;
+    private Timer timerScript;
+
 
     public float score = 0;
 
@@ -52,6 +64,24 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Finish() {
+
+        playerScript.SetControl(false);
+        timerScript.SetTimerIsRunning(false);
+
+        if (inst.score < inst.neededScore)
+        {
+            loseScreenUI.SetActive(true);
+
+        }
+        else
+        {
+            winScreenUI.SetActive(true);
+
+        }
+        
+    }
+
     public void UpdateScoreText()
     {
         scoreText.text = score.ToString() + "/" + neededScore.ToString("f0");
@@ -82,7 +112,9 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        playerScript = gameObjectWithPlayerScript.GetComponent<Player>();
+        timerScript = gameObjectWithTimerScript.GetComponent<Timer>();
+
     }
 
 }
