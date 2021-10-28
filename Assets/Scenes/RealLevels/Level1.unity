@@ -823,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8094340968346268426, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
       propertyPath: m_Name
-      value: CarLogic
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9145d34c02a81744eb3910d8c45b711d, type: 3}
@@ -3750,7 +3750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5343435859897633666, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.57
+      value: -53.47
       objectReference: {fileID: 0}
     - target: {fileID: 5343435859897633666, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3758,7 +3758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5343435859897633666, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -56.93
+      value: -61.38
       objectReference: {fileID: 0}
     - target: {fileID: 5343435859897633666, guid: 00573ad901de2464c887d0d03980dacf, type: 3}
       propertyPath: m_LocalRotation.w
