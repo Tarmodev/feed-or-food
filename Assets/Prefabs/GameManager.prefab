@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3694292493842046200}
   - component: {fileID: 3694292493842046203}
+  - component: {fileID: 2870338344456979738}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,3 +44,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eebbb6709b0b2f643ad3a734604676fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  scorePrefix: 'Food: '
+  neededScore: 100
+  winScreenUI: {fileID: 0}
+  loseScreenUI: {fileID: 0}
+  timeOutScreenUI: {fileID: 0}
+  gameObjectWithPlayerScript: {fileID: 0}
+  gameObjectWithTimerScript: {fileID: 0}
+  score: 0
+--- !u!114 &2870338344456979738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694292493842046202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cedc99349c8b949aebb011fb419ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  remainingTimeInSeconds: 180
+  timerIsRunning: 1
