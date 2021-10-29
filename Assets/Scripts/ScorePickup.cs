@@ -2,10 +2,13 @@
 //using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ScorePickup : MonoBehaviour
 {
-    [SerializeField] private float score = 100f;
+    [SerializeField] private float score;
     [SerializeField] Transform pickupEffect;
+    [SerializeField] AudioClip pickupSound;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +19,7 @@ public class ScorePickup : MonoBehaviour
 
         GameManager.inst.AddScore(score);
         Instantiate(pickupEffect,transform.position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(pickupSound, transform.position);
 
         Destroy(gameObject);
         return;

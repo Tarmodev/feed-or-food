@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         playerScript = gameObjectWithPlayerScript.GetComponent<Player>();
         timerScript = gameObjectWithTimerScript.GetComponent<Timer>();
+        UpdateScoreText();
 
     }
 
