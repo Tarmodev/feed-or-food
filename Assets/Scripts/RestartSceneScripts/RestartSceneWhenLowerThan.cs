@@ -10,7 +10,7 @@ public class RestartSceneWhenLowerThan : MonoBehaviour
     {
         if(targetTransform.transform.position.y < this.transform.position.y)
         {
-            GameManager.inst.ReloadScene();
+            GameManager.inst.FellOut();
 
         }
     }

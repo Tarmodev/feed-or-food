@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winScreenUI;
     [SerializeField] private GameObject loseScreenUI;
     [SerializeField] private GameObject timeOutScreenUI;
+    [SerializeField] private GameObject fellOutScreenUI;
+    [SerializeField] private GameObject fellOutVCam;
 
 
 
@@ -106,6 +108,14 @@ public class GameManager : MonoBehaviour
         // Causes a bug:
         //Time.timeScale = 0.0f;
 
+    }
+
+    public void FellOut()
+    {
+        fellOutScreenUI.SetActive(true);
+        playerScript.SetControl(false);
+		fellOutVCam.SetActive(true);
+        timerScript.SetTimerIsRunning(false);
     }
 
     public void FellOutOfBounds()
