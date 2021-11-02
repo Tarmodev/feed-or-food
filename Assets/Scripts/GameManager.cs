@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject timeOutScreenUI;
     [SerializeField] private GameObject fellOutScreenUI;
     [SerializeField] private GameObject fellOutVCam;
+    [SerializeField] private GameObject winCamTurntable;
 
 
 
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
 
         playerScript.SetControl(false);
         timerScript.SetTimerIsRunning(false);
+        winCamTurntable.SetActive(true);
 
 
         if (inst.score < inst.neededScore)
